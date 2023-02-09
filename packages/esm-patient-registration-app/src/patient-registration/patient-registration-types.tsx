@@ -1,4 +1,4 @@
-import { Session } from '@openmrs/esm-framework';
+import { OpenmrsResource, Session } from '@openmrs/esm-framework';
 import { RegistrationConfig } from '../config-schema';
 import { SavePatientTransactionManager } from './form-manager';
 
@@ -185,6 +185,9 @@ export interface FormValues {
   address: {
     [addressField: string]: string;
   };
+  observation?: ObsResponse;
+  concepts?: Array<ConceptAnswers>;
+  token?: string;
 }
 
 export interface PatientUuidMapType {
@@ -262,4 +265,7 @@ export interface ConceptResponse {
 export interface ConceptAnswers {
   display: string;
   uuid: string;
+}
+export interface ObsResponse {
+  results: Array<{ obs: Array<{ uuid: string; display: string; value: OpenmrsResource; concept: OpenmrsResource }> }>;
 }
