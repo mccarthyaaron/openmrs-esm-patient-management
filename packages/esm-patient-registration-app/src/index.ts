@@ -106,6 +106,24 @@ function setupOpenMRS() {
         online: true,
         offline: true,
       },
+      {
+        id: 'empty-client-registry-modal',
+        load: getAsyncLifecycle(
+          () => import('./patient-verification/verification-modal/empty-prompt.component'),
+          options,
+        ),
+        online: true,
+        offline: true,
+      },
+      {
+        id: 'confirm-client-registry-modal',
+        load: getAsyncLifecycle(
+          () => import('./patient-verification/verification-modal/confirm-prompt.component'),
+          options,
+        ),
+        online: true,
+        offline: true,
+      },
     ],
   };
 }

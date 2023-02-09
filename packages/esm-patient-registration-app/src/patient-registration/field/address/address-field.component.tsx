@@ -21,6 +21,7 @@ export const AddressField: React.FC<AddressFieldProps> = ({ fieldDefinition }) =
               id={fieldDefinition.id}
               labelText={t(`${fieldDefinition.label}`, `${fieldDefinition.label}`)}
               {...field}
+              required={fieldDefinition.validation.required}
             />
           );
         }}
