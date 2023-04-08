@@ -14,7 +14,7 @@ const backendDependencies = {
 };
 
 function setupOpenMRS() {
-  const moduleName = '@openmrs/esm-outpatient-app';
+  const moduleName = '@openmrs/esm-service-queues-app';
 
   const options = {
     featureName: 'outpatient',
